@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   filter: grayscale(20%);
-  background-image: url("1.gif");
+  background-image: url("https://raw.githubusercontent.com/gunmagohkin/ggkphilo/blob/ecc5345620ff9b74581af4a1bff2cb457f655729/1.gif");
   background-size: contain; /* changed from cover */
   background-repeat: no-repeat; /* added */
   background-position: center;
