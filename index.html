@@ -1,92 +1,328 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/@codingnepal -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GGK Company Philosophy</title>
-  <link rel="stylesheet" href="styless.css">
-  <!-- Linking Google Fonts for Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,200,0,0" />
-  <!-- Linking Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: #dcdcdc;
+      font-family: sans-serif;
+    }
+
+    .book {
+      width: 100vw;
+      height: 100vh;
+      perspective: 2000px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pages-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      padding: 2rem;
+      box-sizing: border-box;
+      transition: transform 3s ease, z-index 1s ease;
+      transform-origin: left center;
+      backface-visibility: hidden;
+      border-left: 3px solid #ccc;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+    .page h2, .page h3 {
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  right: 40px;
+  margin: 0;
+  font-size: 2.5rem;
+  color: #2b4f81;
+  border-bottom: 2px solid #4173a5;
+  padding-bottom: 10px;
+}
+
+.page p {
+  margin-top: 50px;
+  max-width: 800px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+    .page.flipped {
+      transform: rotateY(-180deg);
+    }
+
+    .cover {
+      background: #4173a5;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 50px;
+  font-size: 1rem;
+}
+
+
+.pyramid-img {
+    max-width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.pyramid-img:hover {
+    transform: scale(2); /* Slight zoom on hover */
+}
+
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 100;
+      pointer-events: auto;
+    }
+
+    .nav-buttons button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hiring-steps {
+  margin-top: 40px;
+  max-width: 800px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.step p {
+  margin: 10px 0;
+}
+
+.vision2030-img {
+  width: 100%; /* Ensures the GIF fits within the page width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the image maintains aspect ratio */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  max-height: 80vh; /* Restricts the height to 80% of the viewport height */
+}
+
+.vision2030-img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+  </style>
 </head>
 <body>
-  <div class="slider-container">
-    <!-- Slider List Items -->
-    <div class="slider-wrapper swiper-wrapper">
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-      <div class="slider-item swiper-slide">
-        <div class="slide-content">
-        </div>
-      </div>
-    </div>
-    <!-- Slider Pagination -->
-    <div class="slider-controls">
-      <ul class="slider-pagination">
-        <div class="slider-indicator"></div>
-        <li class="slider-tab current"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
-        <li class="slider-tab"> </li>
 
-      
-      </ul>
+<div class="book">
+  <div class="pages-wrapper" id="book">
+    <div class="page cover" id="page1" style="z-index: 12;">
+      <div class="cover-content">
+        <img src="logo.png" alt="Gunma Gohkin Group Logo" class="logo">
+        <div>GUNMA GOHKIN GROUP PHILOSOPHY</div>
+      </div>
     </div>
-    <!-- Slider Navigations (Prev/Next) -->
-    <div class="slider-navigations">
-      <button id="slide-prev" class="material-symbols-rounded">arrow_left_alt</button>
-      <button id="slide-next" class="material-symbols-rounded">arrow_right_alt</button>
+    
+    <div class="page" id="page2" style="z-index: 11;">
+      <h2>Welcome to Our Philosophy Book!</h2>
+      <p class="intro-text">
+        At Gunma Gohkin Group, we are committed to excellence, innovation, and sustainability.
+        This Philosophy Book outlines our <b>principles, mission, management policies, vision, and environment and quality policy</b>—
+        guiding us toward continuous growth and industry leadership.
+      </p>
     </div>
+    
+    <div class="page" id="page3" style="z-index: 10;">
+      <h3>About the Gunma Gohkin Group Philosophy Pyramid</h3>
+      <p>
+        The GGK Group Pyramid symbolizes Gunma Gohkin Group's core philosophy, composed of three strategic layers. 
+        <br><br>
+        At the top is the <b>Principle</b>, representing values like integrity, excellence, and continuous improvement.
+        Next is the <b>Mission</b>, defining GGK’s purpose—centered on customer satisfaction, product quality, and employee growth.
+        At the base are our <b>Management Policies</b>, the standards and practices that ensure consistent, values-driven execution.
+      </p>
+    </div>
+    
+    <div class="page" id="page4" style="z-index: 9;"><img src="2.gif" alt="GGK Pyramid" class="pyramid-img"></div>
+    <div class="page" id="page5" style="z-index: 8;">
+      <div class="page-content">
+        <h3>PRINCIPLE</h3>
+        <p><strong>TOGETHER WE WORK,</strong></p>
+        <ul style="list-style-type: none; padding-left: 0; font-size: 1.5rem;">
+          <li>🔹 to make our workplace engaging and motivating,</li>
+          <li>🔹 to make our company grow and flourish,</li>
+          <li>🔹 to make our living standards better.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="page" id="page6" style="z-index: 7;">
+      <h2>MISSION</h2>
+      <div class="hiring-steps">
+        <div class="step">
+          <p><b>We, Gunma Gohkin Group, always stay a good partner,</b></p>
+          <p><strong>🔹</strong> to bring our customers trust and satisfaction,</p>
+          <p><strong>🔹</strong> to bring our employees and their families thanks and happiness,</p>
+          <p><strong>🔹</strong> to bring the community harmony and contribution.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page7" style="z-index: 6;">
+      <h3>MANAGEMENT POLICY</h3>
+      <div class="hiring-steps">
+        <div class="step">
+          <p><strong>1.</strong> We will go for being a leading die-casting company with safe and secure as well as cleanest and earth-friendly to always satisfy our valued customers.</p>
+          <p><strong>2.</strong> We will enhance our profitability and growth potential to collaborate the domestic efforts refining the quality and technical capabilities and overseas efforts generating additional value.</p>
+          <p><strong>3.</strong> We will foster a workplace where enables all our employees to always have hopes, aspirations, and excitement and enables them to be self-growing at work.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page8" style="z-index: 5;">
+      <h2>ENVIRONMENT POLICY</h2>
+      <div class="policy-section">
+        <p><b>We strive to achieve an efficient workplace. We commit to sustaining the environment through:</b></p>
+        <ul class="policy-list">
+          <li>🌿 Energy saving.</li>
+          <li>♻️ Implementation of the 3Rs (Reduce, Reuse, Recycle).</li>
+          <li>✅ Compliance with the global standards for green procurement.</li>
+          <li>🔍 Observance of the Plan Do Check Action scheme.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="page" id="page9" style="z-index: 4;">
+      <h2>QUALITY POLICY</h2>
+      <div class="page-content">
+        <p><b>We strive to keep our status as a global partner. We are committed to:</b></p>
+        <ul style="list-style-type: none; padding-left: 0; font-size: 1.5rem; margin-bottom: 1px;">
+          <li>🔹Conduct the Product Safety Launch during the Pre-Production Period.</li>
+          <li>🔹Implement 3Ps (Product, Place, People) or the 3Gs (Gembutsu, Gemba, Genjitsu).</li>
+          <li>🔹Provide learning and training opportunities to our employees for their constant personal and professional development.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="page" id="page10" style="z-index: 3;">
+      <h2>GROUP VISION 2030</h2>
+      <div class="page-content">
+        <p>Utilize group synergy and go for being a Leading Die-casting Company with our technological strength and credibility.</p>
+        <p>By 2030, Gunma Gohkin Group shall become a Corporation:</p>
+        <ol>
+          <li>By <b>refining the Quality and Technical Capabilities</b>, we will become a trusted company and a preferred choice of our customers.</li>
+          <li>By <b>working on the Eco-friendly Manufacturing Facilities</b>, we will become an earth-friendly company.</li>
+          <li>By <b>creating a Challenging Workplace</b>, we will become a company with high employee satisfaction.</li>
+        </ol>
+      </div>
+    </div>
+    
+    <div class="page" id="page11" style="z-index: 2;">
+      <img src="10.gif" alt="GGK GROUP VISION 2030" class="vision2030-img">
+    </div>
+
+        <div class="page cover" id="page12" style="z-index: 1;"> </div>
   </div>
-  <!-- Linking Swiper Script -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Linking Custom Script -->
-  <script src="script.js"></script>
+
+  <div class="nav-buttons">
+    <button onclick="prevPage()">⬅️ Prev</button>
+    <button onclick="nextPage()">Next ➡️</button>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  const totalPages = 12;
+
+  function updatePages() {
+    for (let i = 1; i <= totalPages; i++) {
+      const page = document.getElementById(`page${i}`);
+      if (i < currentPage) {
+        page.classList.add('flipped');
+        page.style.zIndex = i; // lower z-index so it stays behind
+      } else {
+        page.classList.remove('flipped');
+        page.style.zIndex = totalPages - i + 1;
+      }
+    }
+  }
+
+  function nextPage() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      updatePages();
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      updatePages();
+    }
+  }
+
+  // Swipe support
+  let touchStartX = 0;
+  document.querySelector('.book').addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  });
+  document.querySelector('.book').addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].clientX;
+    if (touchEndX < touchStartX - 50) nextPage();
+    if (touchEndX > touchStartX + 50) prevPage();
+  });
+
+  updatePages();
+</script>
+
 </body>
 </html>
